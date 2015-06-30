@@ -1,0 +1,16 @@
+﻿<Window x:Class="AnimationChooser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Выбор анимации" Height="350" Width="230" ResizeMode="CanMinimize" WindowStyle="ToolWindow" WindowStartupLocation="Manual" Left="0" Top="0" Closed="Window_Closed">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel >
+                <Button x:Name="button_start" Content="Начало работы в приложении" Margin="5" Padding="10" Click="button_start_Click"/>
+                <Button x:Name="button_drawer" Content="Drawer Menu" Margin="5" Padding="10" Click="button_drawer_Click"/>
+                <Button x:Name="button_update" Content="Ready to Update" Margin="5" Padding="10" Click="button_update_Click"/>
+                <Button Content="Dummy button" Margin="5" Padding="10"/>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,76 @@
+﻿<Window x:Class="Begin_work_with.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Start your work with..." Height="185" Width="185" Background="#FF383A46" ResizeMode="CanMinimize" WindowStyle="ToolWindow" Foreground="White" FontFamily="/Begin work with;component/Fonts/#Century Gothic" WindowStartupLocation="CenterScreen" >
+
+    <Window.Resources>
+
+        <!--Region for circle storyboard glow animation-->
+        <Storyboard x:Key="Glow" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="glow_ellipse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.01"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="glow_ellipse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="glow_ellipse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="ChooserEasing">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="glow_label_chooser">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.0" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <!--Region for circle glow animation-->
+
+    </Window.Resources>
+
+    <Window.Triggers>
+
+        <!--Region for circle triggers glow animation-->
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard x:Name="Glow_BeginStoryboard" Storyboard="{StaticResource Glow}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="glow_button_chooser">
+            <StopStoryboard BeginStoryboardName="Glow_BeginStoryboard"/>
+            <StopStoryboard BeginStoryboardName="Glow_BeginStoryboardAgain"/>
+            <BeginStoryboard x:Name="ChooserEasing_BeginStoryboard1" Storyboard="{StaticResource ChooserEasing}"/>
+            <StopStoryboard BeginStoryboardName="Glow_BeginStoryboard"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="glow_button_start">
+            <BeginStoryboard x:Name="Glow_BeginStoryboardAgain" Storyboard="{StaticResource Glow}"/>
+        </EventTrigger>
+        <!--Region for circle glow animation-->
+
+    </Window.Triggers>
+
+    <Grid>
+        <Label x:Name="glow_label_chooser" Content="Совершается действие выбора..." Height="24.667" VerticalAlignment="Top" FontSize="10" Foreground="#FF2DC34F" Opacity="0"/>
+        <Button x:Name="glow_button_chooser" HorizontalAlignment="Left" Height="50" Margin="64,34.667,0,0" VerticalAlignment="Top" Width="50" Click="glow_button_chooser_Click">
+            <Path Width="38" Height="38" Canvas.Left="19" Canvas.Top="19" Stretch="Fill" Fill="#FF000000" Data="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z "/>
+        </Button>
+        <Ellipse x:Name="glow_ellipse" HorizontalAlignment="Left" Height="20" Margin="79,49.667,0,0" VerticalAlignment="Top" Width="20" IsHitTestVisible="False" RenderTransformOrigin="0.5,0.5" Opacity="0">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#0015B3E2" Offset="0.6"/>
+                    <GradientStop Color="#0015B3E2" Offset="1.0"/>
+                    <GradientStop Color="#FF15B3E2" Offset="0.8"/>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Button x:Name="glow_button_start" Content="Start animation" Height="29.04" VerticalAlignment="Bottom" IsEnabled="False" ToolTip="Нажмите, чтоб начать анимацию заново"/>
+    </Grid>
+</Window>
