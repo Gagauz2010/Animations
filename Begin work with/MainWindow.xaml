@@ -53,7 +53,7 @@
     </Window.Triggers>
 
     <Grid>
-        <Label x:Name="glow_label_chooser" Content="Совершается действие выбора..." Height="24.667" VerticalAlignment="Top" FontSize="10" Foreground="#FF2DC34F" Opacity="0"/>
+        <Label x:Name="glow_label_chooser" Content="Choosing process..." Height="24.667" VerticalAlignment="Top" FontSize="10" Foreground="#FF2DC34F" Opacity="0"/>
         <Button x:Name="glow_button_chooser" HorizontalAlignment="Left" Height="50" Margin="64,34.667,0,0" VerticalAlignment="Top" Width="50" Click="glow_button_chooser_Click">
             <Path Width="38" Height="38" Canvas.Left="19" Canvas.Top="19" Stretch="Fill" Fill="#FF000000" Data="F1 M 35,19L 41,19L 41,35L 57,35L 57,41L 41,41L 41,57L 35,57L 35,41L 19,41L 19,35L 35,35L 35,19 Z "/>
         </Button>
@@ -71,6 +71,6 @@
                 </RadialGradientBrush>
             </Ellipse.Fill>
         </Ellipse>
-        <Button x:Name="glow_button_start" Content="Start animation" Height="29.04" VerticalAlignment="Bottom" IsEnabled="False" ToolTip="Нажмите, чтоб начать анимацию заново"/>
+        <Button x:Name="glow_button_start" Content="Start animation" Height="29.04" VerticalAlignment="Bottom" IsEnabled="False" ToolTip="Click to reload animation"/>
     </Grid>
 </Window>
