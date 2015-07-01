@@ -8,7 +8,7 @@
                 <Button x:Name="button_start" Content="Start work with" Margin="5" Padding="10" Click="button_start_Click"/>
                 <Button x:Name="button_drawer" Content="Drawer Menu" Margin="5" Padding="10" Click="button_drawer_Click"/>
                 <Button x:Name="button_update" Content="Ready to Update" Margin="5" Padding="10" Click="button_update_Click"/>
-                <Button Content="Dummy button" Margin="5" Padding="10"/>
+                <Button x:Name="button_menu" Content="Windows8 Right Menu" Margin="5" Padding="10" Click="button_menu_Click"/>
 
             </StackPanel>
         </ScrollViewer>

@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F4DE7460-D152-4E1F-8D8A-F9CFBF67EBCE}</ProjectGuid>
+    <ProjectGuid>{4BD7C14E-BB10-46EE-8E83-708E55AC9C4B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AnimationChooser</RootNamespace>
-    <AssemblyName>AnimationChooser</AssemblyName>
+    <RootNamespace>Windows8RightMenu</RootNamespace>
+    <AssemblyName>Windows8RightMenu</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>12.0.51020.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -91,24 +92,29 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Begin work with\Begin work with.csproj">
-      <Project>{b88bdf66-ab20-4e8f-958b-db9871fdaee2}</Project>
-      <Name>Begin work with</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DrawerMenu\DrawerMenu.csproj">
-      <Project>{250a5ad3-8155-4353-8b2c-b8d99bf05bd3}</Project>
-      <Name>DrawerMenu</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Update\Update.csproj">
-      <Project>{2c12c41f-3102-42bd-ab02-045f71a28da9}</Project>
-      <Name>Update</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Windows8RightMenu\Windows8RightMenu.csproj">
-      <Project>{4bd7c14e-bb10-46ee-8e83-708e55ac9c4b}</Project>
-      <Name>Windows8RightMenu</Name>
-    </ProjectReference>
+    <BlendEmbeddedFont Include="Fonts\GOTHIC.TTF">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\GOTHICB.TTF">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\GOTHICBI.TTF">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\GOTHICI.TTF">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Begin_work_with;
 using DrawerMenu;
 using Update;
+using Windows8RightMenu;
 
 namespace AnimationChooser
 {
@@ -26,6 +27,7 @@ namespace AnimationChooser
         Begin_work_with.MainWindow windowBegin;
         DrawerMenu.MainWindow windowDrawer;
         Update.MainWindow windowUpdate;
+        Windows8RightMenu.MainWindow windows8Menu;
 
         public MainWindow()
         {
@@ -66,6 +68,18 @@ namespace AnimationChooser
                 windowUpdate.Show();
             }
             windowUpdate.Focus();
+        }
+
+        private void button_menu_Click(object sender, RoutedEventArgs e)
+        {
+            if (windowUpdate == null)
+            {
+                windows8Menu = new Windows8RightMenu.MainWindow();
+                windows8Menu.Closed += (obj_sender, args) => windows8Menu = null;
+                windows8Menu.Owner = this;
+                windows8Menu.Show();
+            }
+            windows8Menu.Focus();
         }
 
         private void Window_Closed(object sender, EventArgs e)
