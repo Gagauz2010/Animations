@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace DrawerMenu
+namespace Navigation
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml

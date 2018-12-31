@@ -1,0 +1,19 @@
+﻿<UserControl x:Name="userControl" x:Class="Navigation.components.MenuItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Navigation.components"
+             mc:Ignorable="d" Height="69.618" Width="356.149" Foreground="#FFDEDEDE" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{Binding ActualHeight, ElementName=userControl, Mode=OneWay}"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="label" Grid.Column="1" Margin="10" FontFamily="{Binding FontFamily, ElementName=userControl}" FontSize="{Binding FontSize, ElementName=userControl}" FontWeight="{Binding FontWeight, ElementName=userControl}" FontStyle="{Binding FontStyle, ElementName=userControl}" Foreground="{Binding Foreground, ElementName=userControl}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="label"/>
+        <Path x:Name="icon" 
+					SnapsToDevicePixels="False"
+					StrokeThickness="3"
+					Data="F1 M 17.4167,32.25L 32.9107,32.25L 38,18L 43.0893,32.25L 58.5833,32.25L 45.6798,41.4944L 51.4583,56L 38,48.0833L 26.125,56L 30.5979,41.7104L 17.4167,32.25 Z " Stretch="Uniform" Stroke="{Binding Foreground, ElementName=userControl}" Margin="5"/>
+    </Grid>
+</UserControl>

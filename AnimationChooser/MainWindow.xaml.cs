@@ -1,24 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-using Begin_work_with;
-using DrawerMenu;
-using Update;
-using Windows8RightMenu;
 
 namespace AnimationChooser
 {
+    /// <summary>
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
@@ -28,6 +13,7 @@ namespace AnimationChooser
         DrawerMenu.MainWindow windowDrawer;
         Update.MainWindow windowUpdate;
         Windows8RightMenu.MainWindow windows8Menu;
+        Navigation.MainWindow windowCustomNavigationMenu;
 
         public MainWindow()
         {
@@ -72,7 +58,7 @@ namespace AnimationChooser
 
         private void button_menu_Click(object sender, RoutedEventArgs e)
         {
-            if (windowUpdate == null)
+            if (windows8Menu == null)
             {
                 windows8Menu = new Windows8RightMenu.MainWindow();
                 windows8Menu.Closed += (obj_sender, args) => windows8Menu = null;
@@ -80,6 +66,18 @@ namespace AnimationChooser
                 windows8Menu.Show();
             }
             windows8Menu.Focus();
+        }
+
+        private void button_custom_menu_Click(object sender, RoutedEventArgs e)
+        {
+            if (windowCustomNavigationMenu == null)
+            {
+                windowCustomNavigationMenu = new Navigation.MainWindow();
+                windowCustomNavigationMenu.Closed += (obj_sender, args) => windowCustomNavigationMenu = null;
+                windowCustomNavigationMenu.Owner = this;
+                windowCustomNavigationMenu.Show();
+            }
+            windowCustomNavigationMenu.Focus();
         }
 
         private void Window_Closed(object sender, EventArgs e)

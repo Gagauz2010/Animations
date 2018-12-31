@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawerMenu", "DrawerMenu\DrawerMenu.csproj", "{250A5AD3-8155-4353-8B2C-B8D99BF05BD3}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimationChooser", "AnimationChooser\AnimationChooser.csproj", "{F4DE7460-D152-4E1F-8D8A-F9CFBF67EBCE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows8RightMenu", "Windows8RightMenu\Windows8RightMenu.csproj", "{4BD7C14E-BB10-46EE-8E83-708E55AC9C4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Navigation", "Navigation\Navigation.csproj", "{B00568A2-9B43-4602-8C3E-BE1B76DA8570}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +41,15 @@ Global
 		{4BD7C14E-BB10-46EE-8E83-708E55AC9C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BD7C14E-BB10-46EE-8E83-708E55AC9C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BD7C14E-BB10-46EE-8E83-708E55AC9C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B00568A2-9B43-4602-8C3E-BE1B76DA8570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B00568A2-9B43-4602-8C3E-BE1B76DA8570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B00568A2-9B43-4602-8C3E-BE1B76DA8570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00568A2-9B43-4602-8C3E-BE1B76DA8570}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE15D8B7-B2D4-43E3-BD3B-FB15A34461BC}
 	EndGlobalSection
 EndGlobal

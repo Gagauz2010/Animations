@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Update
+namespace Navigation
 {
     /// <summary>
     /// Логика взаимодействия для App.xaml
